@@ -1,0 +1,14 @@
+{
+  "id": "error_example",
+  "title": "Error Example",
+  "difficulty": "easy",
+  "description": "Test error handling.",
+  "function_name": "solve",
+  "constraints": [],
+  "test_cases": [
+    {
+      "input": {"a": 1, "b": 2},
+      "output": 3
+    }
+  ]
+}

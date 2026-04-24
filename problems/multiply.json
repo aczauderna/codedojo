@@ -1,0 +1,25 @@
+{
+  "id": "multiply",
+  "title": "Multiply Two Numbers",
+  "difficulty": "easy",
+  "description": "Write a function that multiplies two numbers.",
+  "function_name": "solve",
+  "constraints": [
+    "Input will be a dictionary with keys 'a' and 'b'",
+    "Return the product of a and b"
+  ],
+  "test_cases": [
+    {
+      "input": {"a": 3, "b": 4},
+      "output": 12
+    },
+    {
+      "input": {"a": 5, "b": 6},
+      "output": 30
+    },
+    {
+      "input": {"a": 2, "b": 7},
+      "output": 14
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "two_sum",
+  "title": "Two Sum",
+  "difficulty": "easy",
+  "description": "Find two numbers in the list that add up to the target value.",
+  "function_name": "two_sum",
+  "constraints": [
+    "2 <= n <= 10^4",
+    "-10^9 <= value <= 10^9",
+    "Exactly one valid answer exists"
+  ],
+  "parameters": ["nums", "target"],
+  "test_cases": [
+    {
+      "input": {"nums": [2, 7, 11, 15], "target": 9},
+      "output": [0, 1]
+    },
+    {
+      "input": {"nums": [3, 2, 4], "target": 6},
+      "output": [1, 2]
+    },
+    {
+      "input": {"nums": [3, 3], "target": 6},
+      "output": [0, 1]
+    }
+  ]
+}

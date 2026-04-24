@@ -1,0 +1,41 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS metadata
+.DS_Store
+
+# Logs
+*.log
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# MyPy / Pyright
+.mypy_cache/
+.pyright/
+
+# Coverage / testing
+.coverage
+htmlcov/
+.cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter (if you ever use it)
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.env.*
