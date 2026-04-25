@@ -57,7 +57,10 @@ def main():
     print(f"\nProblem: {problem.title}")
     print(f"ID: {problem.id}")
     print(f"Difficulty: {problem.difficulty}")
-    print(f"Description: {problem.description}\n")
+    print("Description:")
+    for line in problem.description:
+        print(line)
+    print()
     print(f"Results: {results['passed']} passed, {results['failed']} failed\n")
     
     for result in results["test_results"]:

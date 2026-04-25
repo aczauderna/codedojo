@@ -58,7 +58,9 @@ Problems are defined in JSON format with structured metadata. Each problem file 
   "id": "problem_identifier",
   "title": "Problem Title",
   "difficulty": "easy|medium|hard",
-  "description": "Detailed description of what the problem asks.",
+  "description": [
+    "Detailed description of what the problem asks."
+  ],
   "function_name": "solve",
   "constraints": [
     "Constraint 1",
@@ -78,7 +80,7 @@ Problems are defined in JSON format with structured metadata. Each problem file 
 - **id**: Unique identifier for the problem (used as filename)
 - **title**: Human-readable problem name
 - **difficulty**: Level of difficulty (easy, medium, hard)
-- **description**: Full problem description
+- **description**: Full problem description, as one or more lines
 - **function_name**: Name of the function to implement (e.g., "solve")
 - **constraints**: List of constraints or requirements
 - **test_cases**: Array of test cases with input (dict) and expected output
@@ -90,7 +92,9 @@ Problems are defined in JSON format with structured metadata. Each problem file 
   "id": "sum_of_two_numbers",
   "title": "Sum of Two Numbers",
   "difficulty": "easy",
-  "description": "Write a function that returns the sum of two numbers.",
+  "description": [
+    "Write a function that returns the sum of two numbers."
+  ],
   "function_name": "solve",
   "constraints": [
     "The input will always be a dictionary",

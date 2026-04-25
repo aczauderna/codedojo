@@ -2,7 +2,9 @@
   "id": "two_sum",
   "title": "Two Sum",
   "difficulty": "easy",
-  "description": "Find two numbers in the list that add up to the target value.",
+  "description": [
+    "Find two numbers in the list that add up to the target value."
+  ],
   "function_name": "two_sum",
   "constraints": [
     "2 <= n <= 10^4",

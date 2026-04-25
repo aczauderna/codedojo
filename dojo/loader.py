@@ -41,6 +41,14 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
     if missing_fields:
         raise KeyError(f"Missing required fields in {problem_path}: {missing_fields}")
     
+    description_data = data["description"]
+    if isinstance(description_data, str):
+        description_lines = [description_data]
+    elif isinstance(description_data, list) and all(isinstance(item, str) for item in description_data):
+        description_lines = description_data
+    else:
+        raise ValueError("description must be either a string or a list of strings")
+    
     # Parse test cases
     test_cases = []
     test_cases_data = data.get("test_cases", [])
@@ -67,7 +75,7 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
         id=data["id"],
         title=data["title"],
         difficulty=data["difficulty"],
-        description=data["description"],
+        description=description_lines,
         function_name=data["function_name"],
         constraints=data["constraints"],
         test_cases=test_cases,

@@ -2,7 +2,9 @@
   "id": "error_example",
   "title": "Error Example",
   "difficulty": "easy",
-  "description": "Test error handling.",
+  "description": [
+    "Test error handling."
+  ],
   "function_name": "solve",
   "constraints": [],
   "test_cases": [

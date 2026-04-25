@@ -1,0 +1,29 @@
+{
+  "id": "sum_of_unique_elements",
+  "title": "Sum of Unique Elements",
+  "difficulty": "easy",
+  "description": [
+    "Given an array of integers, return the sum of all elements that appear exactly once in the array.",
+    "Elements that appear more than once should be ignored."
+  ],
+  "function_name": "sum_of_unique_elements",
+  "constraints": [
+    "1 <= n <= 1000",
+    "-10^4 <= nums[i] <= 10^4"
+  ],
+  "parameters": ["nums"],
+  "test_cases": [
+    {
+      "input": { "nums": [1, 2, 3, 2] },
+      "output": 4
+    },
+    {
+      "input": { "nums": [5, 5, 5] },
+      "output": 0
+    },
+    {
+      "input": { "nums": [10, 20, 30] },
+      "output": 60
+    }
+  ]
+}

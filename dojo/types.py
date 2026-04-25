@@ -17,7 +17,7 @@ class ProblemSpec:
     id: str
     title: str
     difficulty: str
-    description: str
+    description: List[str]
     function_name: str
     constraints: List[str]
     test_cases: List[TestCase]

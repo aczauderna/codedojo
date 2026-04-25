@@ -148,7 +148,9 @@ def run_problem(problem_id: str, problems_dir: str = "problems", solutions_dir: 
     print(f"Problem: {problem.title}")
     print(f"ID: {problem.id}")
     print(f"Difficulty: {problem.difficulty}")
-    print(f"Description: {problem.description}")
+    print("Description:")
+    for line in problem.description:
+        print(line)
     print(f"{'=' * 70}\n")
     
     # Run test cases

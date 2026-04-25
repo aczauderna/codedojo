@@ -2,7 +2,9 @@
   "id": "broken",
   "title": "Test Broken Solution",
   "difficulty": "easy",
-  "description": "Test problem with broken solution.",
+  "description": [
+    "Test problem with broken solution."
+  ],
   "function_name": "solve",
   "constraints": [],
   "test_cases": [

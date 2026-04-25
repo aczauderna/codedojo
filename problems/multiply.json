@@ -2,7 +2,9 @@
   "id": "multiply",
   "title": "Multiply Two Numbers",
   "difficulty": "easy",
-  "description": "Write a function that multiplies two numbers.",
+  "description": [
+    "Write a function that multiplies two numbers."
+  ],
   "function_name": "solve",
   "constraints": [
     "Input will be a dictionary with keys 'a' and 'b'",

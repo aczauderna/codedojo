@@ -2,7 +2,9 @@
   "id": "example",
   "title": "Example Problem",
   "difficulty": "easy",
-  "description": "This is an example problem to demonstrate the CodeDojo structure.",
+  "description": [
+    "This is an example problem to demonstrate the CodeDojo structure."
+  ],
   "function_name": "solve",
   "constraints": [
     "Input will always be a dictionary",
