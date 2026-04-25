@@ -16,6 +16,43 @@
     "-10^9 <= nums[i] <= 10^9",
     "0 <= limit <= 10^9"
   ],
+
+  "examples": [
+    {
+      "input": { "nums": [8, 2, 4, 7], "limit": 4 },
+      "explanation": "The window [2, 4] is valid (max=4, min=2, diff=2 <= 4). Extending to [2, 4, 7] breaks the limit (7-2=5). The longest valid window has length 2."
+    },
+    {
+      "input": { "nums": [10, 1, 2, 4, 7, 2], "limit": 5 },
+      "explanation": "The longest valid window is [2, 4, 7, 2] with max=7, min=2, diff=5. Length = 4."
+    },
+    {
+      "input": { "nums": [4, 2, 2, 2, 4, 4, 2, 2], "limit": 0 },
+      "explanation": "limit=0 means all values in the window must be equal. The longest run of identical values is [2,2,2] → length 3."
+    }
+  ],
+
+  "edge_cases": [
+    "limit = 0 (forces all elements in the window to be identical)",
+    "Array of length 1 (always returns 1)",
+    "Strictly increasing or decreasing arrays",
+    "Large ranges of values (to test monotonic queue correctness)",
+    "All elements identical (entire array is valid)"
+  ],
+
+  "notes": [
+    "A naive O(n^2) solution checking all windows will time out.",
+    "Maintaining the window's min and max efficiently is the key challenge.",
+    "Monotonic queues allow O(1) amortized updates for min/max tracking."
+  ],
+
+  "hints": [
+    "Hint 1: You need to track the minimum and maximum inside the current window in O(1) amortized time.",
+    "Hint 2: Consider using two monotonic deques: one for the minimums, one for the maximums.",
+    "Hint 3: Expand the right pointer; shrink the left pointer only when the window becomes invalid.",
+    "Hint 4: The answer is the maximum window size observed while maintaining validity."
+  ],
+
   "test_cases": [
     {
       "input": { "nums": [8, 2, 4, 7], "limit": 4 },
