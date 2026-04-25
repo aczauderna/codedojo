@@ -8,7 +8,7 @@ __pycache__/
 *.pyd
 
 # VS Code settings (optional)
-.vscode/
+#.vscode/
 
 # macOS metadata
 .DS_Store

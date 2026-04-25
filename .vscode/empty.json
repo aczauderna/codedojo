@@ -1,0 +1,17 @@
+{
+  "id": "problem_id",
+  "title": "Problem Title",
+  "difficulty": "easy|medium|hard",
+  "description": [
+    "Problem description goes here."
+  ],
+  "function_name": "here goes function name ideally matching problem id",
+  "parameters": [],
+  "constraints": [],
+  "test_cases": [
+    {
+      "input": {"a": 3, "b": 4},
+      "output": 12
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "count_vowels",
+  "title": "Count Vowels",
+  "difficulty": "easy",
+  "description": [
+    "Given a string, return the number of vowels it contains.",
+    "Vowels are: a, e, i, o, u (both lowercase and uppercase)."
+  ],
+  "function_name": "count_vowels",
+  "parameters": ["s"],
+  "constraints": [
+    "0 <= len(s) <= 10^5",
+    "String may contain letters, digits, spaces, and punctuation."
+  ],
+  "test_cases": [
+    {
+      "input": { "s": "Hello World" },
+      "output": 3
+    },
+    {
+      "input": { "s": "" },
+      "output": 0
+    },
+    {
+      "input": { "s": "AEIOUxyz" },
+      "output": 5
+    }
+  ]
+}

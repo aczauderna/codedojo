@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug CodeDojo Problem",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "args": ["${config:codeDojo.problemId}"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

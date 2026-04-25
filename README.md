@@ -40,6 +40,14 @@ If you want to run a custom solution file against a problem:
 python3 run.py sum_of_two_numbers solutions/custom_solution.py
 ```
 
+### Create a Solution Stub
+
+Create a starter solution file for a problem with the configured function signature:
+
+```bash
+python3 run.py make_stub example
+```
+
 ### Output Format
 
 When running `python3 run.py <problem_id>`, you'll see:
@@ -48,6 +56,18 @@ When running `python3 run.py <problem_id>`, you'll see:
 - On failure: Input, expected output, and actual output
 - On error: Input, expected output, and error message
 - Summary with total passed/failed and total execution time
+
+## VS Code Configuration
+
+To avoid duplicating the problem name in both launch and task settings, use a shared workspace configuration value in `.vscode/settings.json`:
+
+```json
+{
+  "codeDojo.problemId": "sum_of_unique_elements"
+}
+```
+
+Then the `.vscode/launch.json` and `.vscode/tasks.json` entries can use `${config:codeDojo.problemId}` so you only need to update the problem ID in one place.
 
 ## Problem Format
 
