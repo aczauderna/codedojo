@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Dict
 
-from .types import ProblemSpec, TestCase
+from .types import Example, ProblemSpec, TestCase
 
 
 def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec:
@@ -48,7 +48,37 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
         description_lines = description_data
     else:
         raise ValueError("description must be either a string or a list of strings")
-    
+
+    def _validate_string_list(value, field_name):
+        if value is None:
+            return None
+        if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+            raise ValueError(f"{field_name} must be a list of strings")
+        return value
+
+    def _parse_examples(examples_data):
+        if examples_data is None:
+            return None
+        if not isinstance(examples_data, list):
+            raise ValueError("examples must be a list")
+
+        examples = []
+        for i, item in enumerate(examples_data):
+            if not isinstance(item, dict):
+                raise ValueError(f"Example {i} must be a dictionary")
+            if "input" not in item:
+                raise ValueError(f"Example {i} is missing 'input' field")
+            if "explanation" not in item:
+                raise ValueError(f"Example {i} is missing 'explanation' field")
+            if not isinstance(item["input"], dict):
+                raise ValueError(f"Example {i}: 'input' must be a dictionary")
+            if not isinstance(item["explanation"], str):
+                raise ValueError(f"Example {i}: 'explanation' must be a string")
+
+            examples.append(Example(input=item["input"], explanation=item["explanation"]))
+
+        return examples
+
     # Parse test cases
     test_cases = []
     test_cases_data = data.get("test_cases", [])
@@ -71,6 +101,12 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
         
         test_cases.append(TestCase(input=tc["input"], output=tc["output"]))
     
+    examples = _parse_examples(data.get("examples"))
+    edge_cases = _validate_string_list(data.get("edge_cases"), "edge_cases")
+    notes = _validate_string_list(data.get("notes"), "notes")
+    tags = _validate_string_list(data.get("tags"), "tags")
+    patterns = _validate_string_list(data.get("patterns"), "patterns")
+
     return ProblemSpec(
         id=data["id"],
         title=data["title"],
@@ -80,8 +116,11 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
         constraints=data["constraints"],
         test_cases=test_cases,
         parameters=data.get("parameters"),  # Optional parameter names
-        tags=data.get("tags"),  # Optional tags
-        patterns=data.get("patterns")  # Optional patterns
+        tags=tags,
+        patterns=patterns,
+        examples=examples,
+        edge_cases=edge_cases,
+        notes=notes
     )
 
 

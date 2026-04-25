@@ -86,6 +86,21 @@ Problems are defined in JSON format with structured metadata. Each problem file 
     "Constraint 1",
     "Constraint 2"
   ],
+  "tags": ["arrays", "hashmap"],
+  "patterns": ["sliding-window"],
+  "examples": [
+    {
+      "input": {"a": 1, "b": 2},
+      "explanation": "Add the two numbers to return their sum."
+    }
+  ],
+  "edge_cases": [
+    "Empty input dictionary",
+    "Large values near limits"
+  ],
+  "notes": [
+    "This is an optional note or clarification."
+  ],
   "test_cases": [
     {
       "input": {"key": "value"},
@@ -103,6 +118,11 @@ Problems are defined in JSON format with structured metadata. Each problem file 
 - **description**: Full problem description, as one or more lines
 - **function_name**: Name of the function to implement (e.g., "solve")
 - **constraints**: List of constraints or requirements
+- **tags**: Optional list of topical tags for the problem
+- **patterns**: Optional list of algorithmic patterns used by the solution
+- **examples**: Optional example inputs with step-by-step explanations
+- **edge_cases**: Optional list of important edge cases to consider
+- **notes**: Optional clarifications or hints
 - **test_cases**: Array of test cases with input (dict) and expected output
 
 ### Example Problem

@@ -10,6 +10,21 @@
     "Input will always be a dictionary",
     "Output should be a valid result"
   ],
+  "tags": ["example", "template"],
+  "patterns": ["none"],
+  "examples": [
+    {
+      "input": {"x": 10},
+      "explanation": "The solution should use x from the input to compute the expected output."
+    }
+  ],
+  "edge_cases": [
+    "Missing input keys",
+    "Zero values"
+  ],
+  "notes": [
+    "This example file demonstrates optional metadata support."
+  ],
   "test_cases": [
     {
       "input": {"x": 10},

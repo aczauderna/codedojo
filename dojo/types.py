@@ -12,6 +12,13 @@ class TestCase:
 
 
 @dataclass
+class Example:
+    """Represents a documented example for a problem."""
+    input: dict
+    explanation: str
+
+
+@dataclass
 class ProblemSpec:
     """Represents a problem specification."""
     id: str
@@ -24,6 +31,9 @@ class ProblemSpec:
     parameters: Optional[List[str]] = None  # Parameter names for function signature
     tags: Optional[List[str]] = None
     patterns: Optional[List[str]] = None
+    examples: Optional[List[Example]] = None
+    edge_cases: Optional[List[str]] = None
+    notes: Optional[List[str]] = None
 
 
 @dataclass

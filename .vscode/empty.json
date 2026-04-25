@@ -5,15 +5,32 @@
   "description": [
     "Problem description goes here."
   ],
-  "function_name": "here goes function name ideally matching problem id",
+  "function_name": "function_name_here",
   "parameters": [],
   "tags": [],
   "patterns": [],
   "constraints": [],
+  
+  "examples": [
+    {
+      "input": { },
+      "explanation": "Explain step-by-step what happens and why the output is what it is."
+    }
+  ],
+
+  "edge_cases": [
+    "Describe edge case 1",
+    "Describe edge case 2"
+  ],
+
+  "notes": [
+    "Optional clarifications or hints."
+  ],
+
   "test_cases": [
     {
-      "input": {"a": 3, "b": 4},
-      "output": 12
+      "input": { },
+      "output": ""
     }
   ]
 }
