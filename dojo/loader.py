@@ -79,7 +79,9 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
         function_name=data["function_name"],
         constraints=data["constraints"],
         test_cases=test_cases,
-        parameters=data.get("parameters")  # Optional parameter names
+        parameters=data.get("parameters"),  # Optional parameter names
+        tags=data.get("tags"),  # Optional tags
+        patterns=data.get("patterns")  # Optional patterns
     )
 
 

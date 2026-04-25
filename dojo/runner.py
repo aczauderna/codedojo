@@ -148,6 +148,8 @@ def run_problem(problem_id: str, problems_dir: str = "problems", solutions_dir: 
     print(f"Problem: {problem.title}")
     print(f"ID: {problem.id}")
     print(f"Difficulty: {problem.difficulty}")
+    print(f"Tags: {problem.tags}")
+    print(f"Patterns: {problem.patterns}")
     print("Description:")
     for line in problem.description:
         print(line)

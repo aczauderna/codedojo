@@ -22,6 +22,8 @@ class ProblemSpec:
     constraints: List[str]
     test_cases: List[TestCase]
     parameters: Optional[List[str]] = None  # Parameter names for function signature
+    tags: Optional[List[str]] = None
+    patterns: Optional[List[str]] = None
 
 
 @dataclass

@@ -1,0 +1,33 @@
+{
+  "id": "longest_subarray_with_limit",
+  "title": "Longest Subarray With Absolute Limit",
+  "difficulty": "medium",
+  "description": [
+    "You are given an array of integers nums and an integer limit.",
+    "Return the length of the longest contiguous subarray such that the absolute difference between any two elements in the subarray is less than or equal to limit.",
+    "You must solve this using an efficient sliding window approach (O(n) time)."
+  ],
+  "function_name": "longest_subarray_with_limit",
+  "parameters": ["nums", "limit"],
+  "tags": ["arrays", "sliding-window", "two-pointers"],
+  "patterns": ["monotonic-queue", "window-with-constraint"],
+  "constraints": [
+    "1 <= len(nums) <= 10^5",
+    "-10^9 <= nums[i] <= 10^9",
+    "0 <= limit <= 10^9"
+  ],
+  "test_cases": [
+    {
+      "input": { "nums": [8, 2, 4, 7], "limit": 4 },
+      "output": 2
+    },
+    {
+      "input": { "nums": [10, 1, 2, 4, 7, 2], "limit": 5 },
+      "output": 4
+    },
+    {
+      "input": { "nums": [4, 2, 2, 2, 4, 4, 2, 2], "limit": 0 },
+      "output": 3
+    }
+  ]
+}
