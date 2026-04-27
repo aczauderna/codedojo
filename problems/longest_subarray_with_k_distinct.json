@@ -1,0 +1,69 @@
+{
+  "id": "longest_subarray_with_k_distinct",
+  "title": "Longest Subarray With At Most K Distinct Integers",
+  "difficulty": "medium",
+  "description": [
+    "Given an integer array nums and an integer k, return the length of the longest contiguous subarray that contains at most k distinct integers.",
+    "You must solve this using an efficient sliding window approach (O(n) time)."
+  ],
+  "function_name": "longest_subarray_with_k_distinct",
+  "parameters": ["nums", "k"],
+  "tags": ["arrays", "sliding-window", "hashmap", "two-pointers"],
+  "patterns": ["window-with-constraint", "frequency-map"],
+  "constraints": [
+    "1 <= len(nums) <= 100000",
+    "-10^9 <= nums[i] <= 10^9",
+    "1 <= k <= len(nums)"
+  ],
+
+  "examples": [
+    {
+      "input": { "nums": [1, 2, 1, 2, 3], "k": 2 },
+      "explanation": "The longest subarray with at most 2 distinct integers is [1,2,1,2] with length 4."
+    },
+    {
+      "input": { "nums": [1, 2, 1, 3, 4], "k": 3 },
+      "explanation": "The longest valid window is [1,2,1,3] with 3 distinct integers. Length = 4."
+    },
+    {
+      "input": { "nums": [5, 5, 5, 5], "k": 1 },
+      "explanation": "All elements are identical, so the entire array is valid. Length = 4."
+    }
+  ],
+
+  "edge_cases": [
+    "k = 1 (window must contain identical values only)",
+    "Array of length 1 (always returns 1)",
+    "All elements identical (entire array is valid)",
+    "k >= number of distinct elements in nums (entire array is valid)",
+    "Strictly increasing array with small k"
+  ],
+
+  "notes": [
+    "Use a hashmap to track frequencies of elements in the current window.",
+    "Expand the right pointer; shrink the left pointer when distinct count exceeds k.",
+    "The answer is the maximum window size observed while maintaining validity."
+  ],
+
+  "hints": [
+    "Hint 1: Maintain a dictionary mapping value → count inside the window.",
+    "Hint 2: When the dictionary has more than k keys, shrink from the left.",
+    "Hint 3: Remove keys from the dictionary when their count drops to zero.",
+    "Hint 4: Track the best window length as you expand the right pointer."
+  ],
+
+  "test_cases": [
+    {
+      "input": { "nums": [1, 2, 1, 2, 3], "k": 2 },
+      "output": 4
+    },
+    {
+      "input": { "nums": [1, 2, 1, 3, 4], "k": 3 },
+      "output": 4
+    },
+    {
+      "input": { "nums": [5, 5, 5, 5], "k": 1 },
+      "output": 4
+    }
+  ]
+}
