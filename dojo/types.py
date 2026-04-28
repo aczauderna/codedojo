@@ -15,7 +15,7 @@ class TestCase:
 class Example:
     """Represents a documented example for a problem."""
     input: dict
-    explanation: str
+    explanation: List[str]
 
 
 @dataclass

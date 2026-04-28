@@ -72,10 +72,16 @@ def load_problem(problem_id: str, problems_dir: str = "problems") -> ProblemSpec
                 raise ValueError(f"Example {i} is missing 'explanation' field")
             if not isinstance(item["input"], dict):
                 raise ValueError(f"Example {i}: 'input' must be a dictionary")
-            if not isinstance(item["explanation"], str):
-                raise ValueError(f"Example {i}: 'explanation' must be a string")
+            
+            explanation = item["explanation"]
+            if isinstance(explanation, str):
+                explanation_lines = [explanation]
+            elif isinstance(explanation, list) and all(isinstance(l, str) for l in explanation):
+                explanation_lines = explanation
+            else:
+                explanation_lines = []
 
-            examples.append(Example(input=item["input"], explanation=item["explanation"]))
+            examples.append(Example(input=item["input"], explanation=explanation_lines))
 
         return examples
 

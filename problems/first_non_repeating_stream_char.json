@@ -1,0 +1,98 @@
+{
+  "id": "first_non_repeating_stream_char",
+  "title": "First Non-Repeating Character in a Stream",
+  "difficulty": "medium",
+  "description": [
+    "You are given a stream of lowercase characters, arriving one by one.",
+    "After each new character arrives, you must report the first character in the stream that has appeared exactly once so far.",
+    "If no such character exists at that moment, report '#'.",
+    "Return the sequence of reports as a single string."
+  ],
+  "function_name": "first_non_repeating_stream_char",
+  "parameters": ["stream"],
+  "tags": ["hash-map", "queue", "stream-processing"],
+  "patterns": ["frequency-counting", "queue-maintenance"],
+  "constraints": [
+    "1 <= stream.length <= 200000",
+    "Stream contains only lowercase English letters",
+    "Time complexity should be O(n)"
+  ],
+
+  "examples": [
+    {
+      "input": { "stream": "aabc" },
+      "explanation": [
+        "Step 1: 'a' arrives → first unique = 'a' → output 'a'",
+        "Step 2: 'a' arrives → now 'a' appears twice → no unique → output '#'",
+        "Step 3: 'b' arrives → 'b' is unique → output 'b'",
+        "Step 4: 'c' arrives → 'b' is still the first unique → output 'b'",
+        "Final output: 'a#bb'"
+      ]
+    }
+  ],
+
+  "edge_cases": [
+    "All characters repeat → output is all '#'.",
+    "Stream of length 1 → output is the same single character.",
+    "Long stream where many characters become invalidated late."
+  ],
+
+  "notes": [
+    "Use a queue to track candidate unique characters in arrival order.",
+    "Use a frequency map to invalidate characters when they repeat.",
+    "Pop from the queue while the front is no longer unique."
+  ],
+
+  "test_cases": [
+    {
+      "input": { "stream": "xyxxyyz" },
+      "output": "xyy###z"
+    },
+    
+    {
+      "input": { "stream": "aabc" },
+      "output": "a#bb"
+    },
+    {
+      "input": { "stream": "zz" },
+      "output": "z#"
+    },
+    {
+      "input": { "stream": "abcabc" },
+      "output": "aaabc#"
+    },
+    {
+      "input": { "stream": "x" },
+      "output": "x"
+    },
+    {
+      "input": { "stream": "aaaaa" },
+      "output": "a####"
+    },
+    {
+      "input": { "stream": "abcdef" },
+      "output": "aaaaaa"
+    },
+    {
+      "input": { "stream": "aabbccddeeffg" },
+      "output": "a#b#c#d#e#f#g"
+    },
+    {
+      "input": { "stream": "abababab" },
+      "output": "aab#####"
+    },
+    {
+      "input": { "stream": "qwertyqwerty" },
+      "output": "qqqqqqwerty#"
+    },
+    
+    {
+      "input": { "stream": "mmnmm" },
+      "output": "m#nnn"
+    },
+    {
+      "input": { "stream": "aazbbzy" },
+      "output": "a#zzz#y"
+    }
+  ]
+}
