@@ -1,0 +1,90 @@
+{
+  "id": "min_removals_sorted_subsequence",
+  "title": "Minimum Removals to Form a Sorted Subsequence",
+  "difficulty": "medium",
+  "description": [
+    "Given a string s consisting of lowercase English letters, your task is to determine the minimum number of characters that must be removed so that the remaining characters form a non-decreasing (lexicographically sorted) subsequence.",
+    "A subsequence is obtained by deleting zero or more characters without changing the order of the remaining characters.",
+    "Your goal is to keep the longest possible non-decreasing subsequence and remove all other characters."
+  ],
+  "function_name": "min_removals_sorted_subsequence",
+  "parameters": ["s"],
+  "tags": ["strings", "dynamic programming", "binary search", "LIS"],
+  "patterns": ["longest increasing subsequence", "patience sorting"],
+  "constraints": [
+    "1 <= s.length <= 200000",
+    "s contains only lowercase English letters ('a' to 'z')",
+    "Time complexity target: O(n log n)"
+  ],
+  
+  "examples": [
+    {
+      "input": { "s": "banana" },
+      "explanation": "The longest non-decreasing subsequence is 'aan' (length 3). The original string has length 6, so the minimum removals are 6 - 3 = 3."
+    },
+    {
+      "input": { "s": "abc" },
+      "explanation": "Already sorted. Longest subsequence is 'abc'. Minimum removals = 0."
+    },
+    {
+      "input": { "s": "cba" },
+      "explanation": "The longest non-decreasing subsequence is any single character (e.g., 'c', 'b', or 'a'). Minimum removals = 3 - 1 = 2."
+    }
+  ],
+
+  "edge_cases": [
+    "String of length 1 should return 0.",
+    "All characters identical (e.g., 'aaaaaa') should return 0.",
+    "Strictly decreasing strings should return s.length - 1.",
+    "Very long strings must be handled efficiently (O(n log n))."
+  ],
+
+  "notes": [
+    "This problem is a variant of the Longest Non-Decreasing Subsequence (LNDS).",
+    "The optimal solution uses binary search to maintain a patience-sorting style structure.",
+    "The minimal removals equal: s.length - LNDS_length."
+  ],
+
+  "test_cases": [
+   {
+     "input": { "s": "banana" },
+     "output": 3
+   },
+   {
+     "input": { "s": "aaaa" },
+     "output": 0
+   },
+   {
+     "input": { "s": "abc" },
+     "output": 0
+   },
+   {
+     "input": { "s": "cba" },
+     "output": 2
+   },
+   {
+     "input": { "s": "abca" },
+     "output": 1
+   },
+   {
+     "input": { "s": "cabca" },
+     "output": 2
+   },
+   {
+     "input": { "s": "a" },
+     "output": 0
+   },
+   {
+     "input": { "s": "abccba" },
+     "output": 2
+   },
+   {
+     "input": { "s": "zyxwvutsrqponmlkjihgfedcba" },
+     "output": 25
+   },
+   {
+     "input": { "s": "azbycxdwevfugthsirjqkplomn" },
+     "output": 12
+   }
+  ]
+}
